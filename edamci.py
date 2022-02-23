@@ -1,9 +1,10 @@
 import unittest
-from rdflib import ConjunctiveGraph, Namespace
+from rdflib import ConjunctiveGraph
 import os
 import pandas as pd
 import argparse
 import sys
+import xmlrunner
 
 
 def parsing () :
@@ -321,7 +322,7 @@ if __name__ == '__main__':
     print(f"error = {run_error}, essential = {run_essential}, curation = {run_curation}")
 
     
-    runner = unittest.TextTestRunner()
+    runner = xmlrunner.XMLTestRunner()
     sys.exit(runner.run(suite()))
     
 
